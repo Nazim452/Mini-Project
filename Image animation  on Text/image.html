@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'arial';
+            color: white;
+
+        }
+        .main{
+
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #000
+        }
+
+        .elem {
+            height: 120px;
+            width: 100%;
+            border-bottom: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+
+        h1 {
+            font-size: 5vw;
+            position: relative;
+            z-index: 2;
+            mix-blend-mode: difference;
+        }
+        img{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-size: cover;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            opacity: 0;
+            transition: all linear 0.3s;
+            /* transform: translate(-50%,-50%); */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div id="elem1" class="elem" >
+            <h1>Nazim khan</h1>
+            <img src="https://images.unsplash.com/photo-1540076156429-35ffe82b7870?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG92ZSUyMGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+        </div>
+        <div class="elem">
+            <h1>James rao</h1>
+            <img src="https://images.unsplash.com/photo-1591969851586-adbbd4accf81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bG92ZSUyMGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+        </div>
+        <div class="elem">
+            <h1>Roma range</h1>
+            <img src="https://images.unsplash.com/photo-1615966650071-855b15f29ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bG92ZSUyMGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+        </div>
+        <div class="elem">
+            <h1>Hello bhai</h1>
+            <img src="https://images.unsplash.com/photo-1521033719794-41049d18b8d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bG92ZSUyMGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+        </div>
+    </div>
+
+
+    <script>
+
+
+var elem = document.querySelectorAll(".elem");
+
+elem.forEach(function(val){
+    // console.log(val.childNodes[3]);
+    val.addEventListener("mouseenter",function(){
+        val.childNodes[3].style.opacity =1;
+    });
+    val.addEventListener("mouseleave",function(){
+        val.childNodes[3].style.opacity =0;
+    });
+    val.addEventListener("mousemove",function(dets){
+        val.childNodes[3].style.left =dets.x+"px";
+        val.childNodes[3].style.top =dets.y+"px";
+    });
+})
+
+
+// var image = document.querySelector("#elem1 img");
+// var element = document.querySelector("#elem1");
+
+// element.addEventListener("mousemove", function(dets){
+//     image.style.left = dets.x +"px";
+//     image.style.top = dets.y +"px";
+
+// })
+
+// element.addEventListener("mouseenter", function(dets){
+//     image.style.opacity =1;
+// })
+// element.addEventListener("mouseleave", function(dets){
+//     image.style.opacity =0;
+// })
+
+
+
+    </script>
+</body>
+
+</html>

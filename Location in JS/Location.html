@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Getting user Location</h1>
+    <button id="get-location-btn">Get Location</button>
+
+
+    <script>
+
+
+        const btn = document.getElementById("get-location-btn");
+
+
+
+
+
+        function getLocation(position) {
+            console.log(position);
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+        }
+
+
+        function failedTogetLoc() {
+            console.log('Something went wrong');
+        }
+
+
+        btn.addEventListener("click", async () => {
+            navigator.geolocation.getCurrentPosition(getLocation, failedTogetLoc);
+        })
+
+
+
+
+
+
+        // const APIkey = "53f327c87ab2082ce6cd29ff713690fc"
+
+
+
+
+        // async function weatherdata(){
+        //     let city ="goa";
+        //     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`)
+
+        //     const data =await response.json();
+        //     console.log(data.main.temp);
+
+
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

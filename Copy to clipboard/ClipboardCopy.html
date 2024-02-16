@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" value="copy " class="btn">
+    <button class="sound">Sound</button>
+
+    
+    
+  
+
+  
+
+    <script>
+       
+        let text = document.getElementById("text");
+        const btn = document.querySelector(".btn")
+        btn.addEventListener("click",function(){
+          
+            text.select();
+            document.execCommand('copy')
+           
+        })
+        var msg ="Hi, I am Nazim"
+        document.querySelector(".sound").addEventListener('click',()=>{
+            const utterance = new SpeechSynthesisUtterance(msg);
+            speechSynthesis.speak(utterance);
+        })
+
+
+
+   
+
+     
+    </script>
+    
+</body>
+</html>

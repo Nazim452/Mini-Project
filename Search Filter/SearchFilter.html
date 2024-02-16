@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="myInput" placeholder="Search name" onkeyup="searchFun()">
+    <table id="mytable">
+        <tr class="header">
+            <th style="width: 40%;">Name</th>
+            <th style="width: 30%;">Degree</th>
+            <th style="width: 30%;">Profession</th>
+        </tr>
+
+        <tr>
+            <td>Vinod</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Nazim</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Sahil</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Sonu</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Nazma</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Rshid</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Rahul</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Abdul</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+        <tr>
+            <td>Alimullah</td>
+            <td>MCS</td>
+            <td>Full stack developer</td>
+        </tr>
+
+    </table>
+
+
+    <script>
+
+        function searchFun() {
+            let filter = document.querySelector("#myInput").value.toUpperCase();
+
+            let myTbale = document.querySelector("#mytable");
+            let tr = myTbale.getElementsByTagName("tr");
+
+            for (var i = 0; i < tr.length; i++) {
+                // [0] means first row of table in every ii teratio
+                let td = tr[i].getElementsByTagName('td')[0]; //yahan par tag and content milega
+                if (td) {
+                    // textContent se sirf content milta hai atag nahi
+                    let textValue = td.textContent || td.innerHTML;
+                    // bcz filter data is also in uppercase so textValue is converted into uppercase
+
+                    // if textValue ANd filterValue(user Value) , equal then index +ve otherwise -ve
+                    if(textValue.toUpperCase().indexOf(filter)>-1){   // value found
+                        tr[i].style.display=""; // jo value hai  as a tas dikh jayega
+
+                    }else{
+                        tr[i].style.display = "none";    // value not  found
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

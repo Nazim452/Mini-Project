@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* .container{
+          
+            display: grid;
+            grid-template-columns: 100px 1fr 1fr 100px;
+            grid-template-rows: 40px 1fr 1fr 40px;
+            gap: 5px;
+            border: 1px solid red;
+            height: 500px;
+            width: 500px;
+        }
+        .box1, .box4{
+            grid-column-start: 1;
+            grid-column-end: 5;
+
+        }
+         .box2{
+           
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .box3{
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        } */
+        .box{
+           background-color: aqua;
+          
+           border:  3px solid red;
+         
+        }
+        .container{
+            height: 500px;
+            border:  3px s olid red;
+            display: grid;
+            grid-template-columns: 70px 1fr 1fr 70px;
+            grid-template-rows: 40px 1fr 40px;
+        }
+        .box1,.box4{
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+        .box3{
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box1 box">box1</div>
+        <div class="box2 box">box2</div>
+        <div class="box3 box">box3</div>
+        <div class="box5 box">box5</div>
+        <div class="box4 box">box4</div>
+        
+    
+       
+    </div>
+</body>
+</html>

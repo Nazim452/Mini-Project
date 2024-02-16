@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .button {
+            height: 50px;
+            width: 120px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* transform: translateX(45vw) translateY(45vh); */
+            position: relative;
+            color: white;
+            z-index: 1;
+
+
+        }
+        .button::before{
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 1s;
+            
+            z-index:-1;
+
+            
+        }
+        .button:hover::before{
+            transform:scaleX(1) ;
+           
+           
+        }
+
+        /* .under {
+            height: 50px;
+            width: 120px;
+            position: absolute;
+            background-color: black;
+            opacity: -1;
+            width: 0px;
+
+
+        }
+
+
+        .button:hover {
+
+
+            cursor: pointer;
+
+            .under {
+                opacity: 2;
+                z-index: 1;
+                transition: all 1s;
+                width: 120px;
+                z-index: -2;
+                animation-direction: normal;
+
+            }
+
+
+
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="button">
+        <p> Hire me</p>
+        <div class="under">
+
+        </div>
+
+    </div>
+</body>
+
+</html>

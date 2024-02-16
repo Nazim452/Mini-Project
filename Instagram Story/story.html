@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="android-chrome-192x192.png" type="">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'arial';
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #0a4628;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .card {
+            height: 400px;
+            width: 300px;
+            background-color: rgb(0, 255, 255);
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+
+        }
+
+        #storiyan {
+            height: 100px;
+            width: 100%;
+            border-bottom: 2px solid rgb(182, 37, 37);
+            padding: 20px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        #storiyan::-webkit-scrollbar {
+            display: none;
+
+        }
+
+
+
+        .story {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: 2px solid rgb(54, 39, 105);
+            display: inline-block;
+            overflow: hidden;
+            margin-right: 8px;
+
+        }
+
+        .story img {
+            /* background-size:contain; */
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+        }
+
+        #full-screen {
+            height: 100%;
+            width: 100%;
+
+            background-color: rgb(132, 114, 114);
+
+            position: absolute;
+            display: none;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div id="full-screen"></div>
+        <div id="storiyan">
+
+        </div>
+    </div>
+
+
+    <script>
+        var arr = [
+            { dp: "https://images.unsplash.com/photo-1484876632310-ddb3b48133cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1484876632310-ddb3b48133cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+
+            { dp: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1535615615570-3b839f4359be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+
+
+            { dp: "https://images.unsplash.com/photo-1520660677254-c84b87877738?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1561240055-102e7eaa2961?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+
+
+
+            { dp: "https://images.unsplash.com/photo-1490723186985-6d7672633c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1521145239174-279dc2227166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+            { dp: "https://images.unsplash.com/photo-1490723186985-6d7672633c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1521145239174-279dc2227166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+            { dp: "https://images.unsplash.com/photo-1490723186985-6d7672633c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1521145239174-279dc2227166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+            { dp: "https://images.unsplash.com/photo-1490723186985-6d7672633c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1521145239174-279dc2227166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" },
+
+
+            { dp: "https://images.unsplash.com/photo-1520025242995-b667e32d0632?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", story: "https://images.unsplash.com/photo-1468853692559-fc594e932a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" }
+        ]
+        var storiyan = document.querySelector("#storiyan");
+
+        var clutter = "";
+        arr.forEach(function (elem, index) {
+            clutter += `<div class="story">
+                <img id="${index}" src="${elem.dp}" alt="">
+            </div>`
+        })
+        storiyan.innerHTML = clutter;
+
+        storiyan.addEventListener("click", function (dets) {
+            document.querySelector("#full-screen").style.display = "block";
+
+            document.querySelector("#full-screen").style.backgroundImage = `url(${arr[dets.target.id].story})`
+
+            setTimeout(function () {
+                document.querySelector("#full-screen").style.display = "none";
+            }, 2000)
+        })
+    </script>
+</body>
+
+</html>

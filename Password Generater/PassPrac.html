@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<style>
+    * {
+         margin:0;
+         padding:0;
+         box-sizing:border-box;
+         font-family:'arial';
+         color: white;
+      }
+     
+    body{
+    height:100%;
+    width:100%;
+    background-color:#534d4d;
+    }
+    #pass-box{
+        height: 30px;
+        width: 300px;
+        color:black;
+        border: 2px solid red;
+        text-align: center;
+
+    }
+</style>
+<body>
+
+    <div class="main" style="">
+      <div 
+      style="color: rgb(255, 232, 232) ;"
+      id="pass-box"
+      >
+
+      
+    </div> 
+    <input type="button" value="copy" style="color: black;" id="copy">
+ 
+       
+
+        <div class="row">
+           
+              PassWord Length
+              <input type="number" id="total-char" value="5" min="5" max="20" style="color: black;" >
+         
+        </div>
+
+        <div class="row"  style="display: flex;">
+            <label for="">
+                <div class="left">
+                    Contains UpperCase
+                </div>
+            </label>
+            
+            <div class="right" >
+                <input type="checkbox" id="upper-input" >
+            </div>
+        </div>
+        <div class="row"  style="display: flex;">
+            <label for="">
+                <div class="left">
+                    Contains Lowercase
+                </div>
+            </label>
+            
+            <div class="right" >
+                <input type="checkbox" id="lower-input" >
+            </div>
+        </div>
+        <div class="row"  style="display: flex;">
+            <label for="">
+                <div class="left">
+                    Contains Number
+                </div>
+            </label>
+            
+            <div class="right" >
+                <input type="checkbox" id="number-input" >
+            </div>
+        </div>
+        <div class="row"  style="display: flex;">
+            <label for="">
+                <div class="left">
+                    Contains Symbolo
+                </div>
+            </label>
+            
+            <div class="right" >
+                <input type="checkbox" id="symbol-input" >
+            </div>
+        </div>
+
+        <button id="btn" style="color: rgb(0, 0, 0);">
+            Generate Password
+        </button>
+
+
+
+
+
+    </div>
+
+    <script>
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const LoweCase = "abcdefghijklmnopqrstuvwxyz"
+    const number = "1234567890"
+    const symbol = "~!@#$%^&*()_+?|:>"
+    const passwordBox = document.getElementById("pass-box")
+        const upperInput = document.getElementById("upper-input");
+        const lowerINput = document.getElementById("lower-input");
+        const numberInput = document.getElementById("number-input");
+        const button = document.getElementById("btn");
+        const copy = document.querySelector("#copy")
+
+        const symbolInput = document.getElementById("symbol-input");
+        const totalChar = document.getElementById("total-char")
+
+        const getRandomData =(dataset)=>{
+            return dataset[Math.floor(Math.random()*dataset.length)]; 
+        }
+   var password;     
+       function  genaratePassWord(password=""){
+
+        if(upperInput.checked) password+=getRandomData(upperCase)
+        if(lowerINput.checked) password+=getRandomData(LoweCase)
+        if(numberInput.checked) password+=getRandomData(number)
+        if(symbolInput.checked) password+=getRandomData(symbol)
+        if(password.length<totalChar.value){
+            return genaratePassWord(password);
+        }
+        
+        passwordBox.innerText  = truncateString(password, totalChar.value);
+        console.log(password);
+       }
+    //    genaratePassWord();
+
+      button.addEventListener("click", function(){
+        genaratePassWord();
+       })
+
+       function truncateString(password, totalPasWord){
+        if(password.length>totalPasWord){
+            return password.substring(0, totalPasWord);
+
+        }else return password
+       }
+
+       copy.addEventListener("click", ()=>{
+       
+        navigator.clipboard.writeText(passwordBox.innerHTML)
+       })
+
+       
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

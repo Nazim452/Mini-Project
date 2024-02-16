@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+
+            display: flex;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            
+        }
+
+        .container .box{
+            width: 350px;
+            padding: 40px 40px 40px 10px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .container .box .icon{
+            margin: auto;
+            position: relative;
+            height: 80px;
+            width: 80px;
+            background: #171515;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border-radius: 50%;
+            transition: 1s;
+
+
+        }
+        .container .box .content h3{
+            text-align: center;
+            padding: 10px;
+
+        }
+        .container .box .content p{
+            padding: 20px;
+        }
+        .content a{
+            background: white;
+            display: flex;
+            text-decoration: none;
+            margin-left: 37%;
+            padding: 10px 20px;
+            color: rgb(25, 24, 24);
+          
+            
+            display: inline-block;
+            box-shadow:0px  0px 10px  rgba(0, 0, 0, 0.5);
+
+        }
+        .container .box .content{
+            z-index: 1;
+            position: relative;
+        }
+
+
+
+
+
+
+         /* CHILD 1 */
+
+
+
+
+
+        .container .box:nth-child(1) .icon{
+            background: red;
+            box-shadow: 0px 0px opx red;
+        }
+
+
+        .container .box:nth-child(1):hover .icon{
+            background: white;
+            color: black;
+
+            
+            box-shadow: 0px 0px 0px 500px red;
+
+            transform: rotateZ(360deg);
+        }
+
+
+        .container .box:nth-child(1):hover .content{
+            
+           color: #fff;
+        }
+
+
+
+
+
+
+
+
+        .container .box:nth-child(2) .icon{
+            background: blue;
+            
+        }
+        .container .box:nth-child(2):hover .icon{
+            background: white;
+            color: black;
+            transform: rotateY(360deg);
+            box-shadow: 0px 0px 0px 500px blue;
+
+            
+        }
+
+        .container .box:nth-child(2):hover .content{
+           color: white;
+            
+        }
+        .container .box:nth-child(3) .icon{
+            background: green;
+        }
+        .container .box:nth-child(3):hover .icon{
+            background: white;
+            color: black;
+            transform: rotateX(360deg);
+            box-shadow: 0 0 0 500px green;
+        }
+        .container .box:nth-child(3):hover .content{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box">
+        <div class="icon">1</div>
+        <div class="content">
+            <h3>MATRICULATION OF NAZIM</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem a voluptatum eaque dicta! Modi magni natus quisquam. Ullam voluptatibus non sapiente nam? Similique vel adipisci, cum perferendis explicabo inventore numquam?</p>
+            <a href="">Read More</a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="box">
+        <div class="icon">2</div>
+        <div class="content">
+            <h3>INTERMIDIATE OF NAZIM</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem a voluptatum eaque dicta! Modi magni natus quisquam. Ullam voluptatibus non sapiente nam? Similique vel adipisci, cum perferendis explicabo inventore numquam?</p>
+            <a href="">Read More</a>
+
+        </div>
+    </div>
+    
+
+
+
+
+
+
+    <div class="box">
+        <div class="icon">3</div>
+        <div class="content">
+            <h3>COLLEGE LIFE</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem a voluptatum eaque dicta! Modi magni natus quisquam. Ullam voluptatibus non sapiente nam? Similique vel adipisci, cum perferendis explicabo inventore numquam?</p>
+            <a href="">Read More</a>
+
+        </div>
+    </div>
+
+</div>
+    
+</body>
+</html>

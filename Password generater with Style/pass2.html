@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="pass2.css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="copy-pass">
+            <div id="pass-box">Testing
+
+                
+            </div>
+            <div id="copyPassWors">
+                <i class="fa-regular fa-copy"></i>
+            </div>
+        </div>
+
+            <div class="row">
+               <div class="pass">
+                <div class="left">
+                    Password Length
+                </div>
+
+               <div class="pass-stren" style="display: flex;">
+                <div class="sttength">
+                    Password Strength      
+
+                   
+                </div>
+
+                <div class="sttength-right " style="margin-top: 10px ; margin-left: 100px;">
+                    Weaks
+                </div>
+               </div>
+
+                
+
+
+               </div>
+                <div class="right">
+                    <input type="number" name="" id="total-char" max="30" min="2" value="10" />
+
+                    
+                </div>
+            </div>
+            <div class="row">
+                <label for="upper-case">
+                    <div class="left">
+                       Contains Uppercase
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="upper-case" checked/>
+                </div>
+            </div>
+            <div class="row">
+                <label for="lower-case">
+                    <div class="left">
+                      Contains Lowercase
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="lower-case" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="numbers">
+                    <div class="left">
+                    Contains Numbers
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="numbers" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="symbols">
+                    <div class="left">
+                    Contains Symbols
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="symbols" />
+                </div>
+            </div>
+            <div class="row">
+                <button id="btn">
+                    Generate
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="pass2.js"></script>
+</body>
+
+</html>

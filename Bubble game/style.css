@@ -1,0 +1,128 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#panel{
+    overflow: hidden;
+    width: 80%;
+    height: 95%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#ptop{
+    padding: 0 30%;
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+    background-color: rgb(21, 126, 91);
+}
+
+.elem{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   
+}
+
+.box{
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #000;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}  
+
+.elem h2{
+    font-weight: 500;
+    font-size: 22px;
+}
+#pbtm{
+    width: 100%;
+    /* height: calc(100%-10px); */
+    height: 250px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    
+
+}
+
+.bubble{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(101, 134, 101);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+
+
+}
+
+.bubble:hover{
+    cursor: pointer;
+    background-color: rgb(37, 73, 37);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

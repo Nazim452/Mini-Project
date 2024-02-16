@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'arial'
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            background-color: #605353
+        }
+
+        .container {
+            height: 400px;
+            width: 300px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            background-size: cover;
+
+        }
+
+        i {
+            color: #8f1e1e;
+            font-size: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0) ;
+            opacity: 0.8;
+            transition: transform ease 0.4s;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://images.unsplash.com/photo-1611601679655-7c8bc197f0c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZWwlMjBnaXJsfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+        alt="">
+    <i class="ri-heart-3-fill"></i>
+</div>
+
+
+
+<script>
+    var container =document.querySelector(".container");
+    var love = document.querySelector('i');
+
+    container.addEventListener("dblclick", function(){
+        love.style.transform = ' translate(-50%, -50%) scale(1.3)';
+
+
+        setTimeout(function(){
+            love.style.transform = ' translate(-50%, -50%) scale(0)';
+        },2000)
+        
+    })
+</script>
+
+</body>
+
+</html>

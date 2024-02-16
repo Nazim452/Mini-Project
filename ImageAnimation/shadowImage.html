@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        body{
+            overflow: hidden;
+        }
+
+        .banner1 , .banner2, .banner3, .banner4{
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        img{
+            width: 120%;
+            /* height: 100vh; */
+            animation: zoom-out 3s linear infinite;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+        }
+
+        @keyframes zoom-out {
+            100%{
+                width: 100%;
+            }
+            
+        }
+        .text-box{
+            width: 600px;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            /* color: rgb(30, 27, 27);
+            background: rgb(138, 115, 115); */
+            color: rgb(232, 227, 227);
+            animation: textup 12s linear infinite;
+            transform: translateY(100px);
+        }
+
+        @keyframes textup {
+            10%{
+                transform: translateY(0px);
+            }
+
+            100%{
+                transform: translateY(0px);
+            }
+
+            
+        }
+
+        .text-box1{
+            animation-delay: 0s;
+        }
+        .text-box2{
+            animation-delay: 3s;
+        }
+        .text-box3{
+            animation-delay: 6s;
+        }
+        .text-box4{
+            animation-delay: 9s;
+        }
+
+        .text-box h1{
+            margin-bottom: 40px;
+
+        }
+        .text-box p{
+            font-size: 14px;
+            margin-top: 80px;
+            line-height:20px;
+        }
+        .text-box span{
+            background: red;
+            height: 3px;
+            width: 100px;
+            position: absolute;
+        }
+
+        .banner1{
+            animation: slide1 12s  linear infinite;
+        }
+        .banner2{
+            animation: slide2 12s  linear infinite;
+        }
+        .banner3{
+            animation: slide3 12s  linear infinite;
+        }
+        .banner4{
+            animation: slide4 12s  linear infinite;
+        }
+
+
+        @keyframes slide1 {
+            0%{
+                visibility: visible;     
+            }
+            25%{
+                visibility: hidden;
+            }
+            50%{
+                visibility: hidden;
+            }
+            75%{
+                visibility: hidden;     
+            }
+            100%{
+                visibility:visible;
+            }
+            
+        }
+        @keyframes slide2 {
+            0%{
+                visibility: hidden;     
+            }
+            25%{
+                visibility: hidden;
+            }
+            50%{
+                visibility:visible;
+            }
+            75%{
+                visibility: hidden;     
+            }
+            100%{
+                visibility:hidden;
+            }
+            
+        }
+        @keyframes slide3 {
+            0%{
+                visibility: hidden;     
+            }
+            25%{
+                visibility: hidden;
+            }
+            50%{
+                visibility: hidden;
+            }
+            75%{
+                visibility: visible;     
+            }
+            100%{
+                visibility:visible;
+            }
+            
+        }
+        @keyframes slide4 {
+            0%{
+                visibility: hidden;     
+            }
+            25%{
+                visibility: hidden;
+            }
+            50%{
+                visibility: hidden;
+            }
+            75%{
+                visibility: hidden;     
+            }
+            100%{
+                visibility:visible;
+            }
+            
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="banner1">
+        <img src="audi-rs-e-tron-gt.jpg" alt="">
+
+        <div class="text-box  text-box1">
+            
+            <h1>Silence is not enough</h1>
+            <span></span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloremque architecto voluptatibus, similique soluta esse suscipit accusantium placeat ex maiores./p>
+        </div>
+    </div>
+
+
+
+
+    <div class="banner2">
+        <img src="nio-et5.jpg" alt="">
+
+        <div class="text-box text-box2">
+            
+            <h1>YThis is keyboard</h1>
+            <span></span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloremque architecto voluptatibus, similique soluta esse suscipit accusantium placeat ex maiores./p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="banner3">
+        <img src="maserati-mc20.jpg" alt="">
+
+        <div class="text-box text-box3">
+            
+            <h1>This is nmy mouse</h1>
+            <span></span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloremque architecto voluptatibus, similique soluta esse suscipit accusantium placeat ex maiores./p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="banner4">
+        <img src="aston-martin.jpg" alt="">
+
+        <div class="text-box text-box4">
+            
+            <h1>This is my book</h1>
+            <span></span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloremque architecto voluptatibus, similique soluta esse suscipit accusantium placeat ex maiores./p>
+        </div>
+    </div>
+    
+</body>
+</html>

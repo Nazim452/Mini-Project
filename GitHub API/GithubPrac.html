@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="github.css">
+</head>
+
+
+
+<body>
+    <form action="" onsubmit="return formSubmit()"> <input type="text" placeholder="Search Github User Info" id="input">
+    </form>
+
+    <div class="main">
+        <!-- <div class="card">
+            <div class="img">
+                <img class="avatar"  src="https://picsum.photos/200" alt="">
+            </div>
+
+            <div class="user-info">
+                <h2>Name</h2>
+                <p>Bio</p>
+
+                <ul class="info">
+                    <li><Strong>Followers</Strong></li>
+                    <li><Strong>Foloowing</Strong></li>
+                    <li><Strong>Repos</Strong></li>
+
+                </ul>
+
+                <div class="repos">
+                    <a href="#" class="repo" target="_blank">Repo1</a>
+                    <a href="#" class="repo" target="_blank">Repo2</a>
+                    <a href="#" class="repo" target="_blank">Repo3</a>
+
+                </div>
+            </div>
+
+
+        </div> -->
+    </div>
+
+    <script>
+
+        // const main = document.getElementsByClassName("main");
+        const main = document.querySelector(".main")
+        const apiurl = "https://api.github.com/users/";
+        const getUser = async (username) => {
+            const res = await fetch(apiurl + username);
+            const data = await res.json();
+
+            // console.log(data);
+            const card = `
+            <div class="card">
+            <div class="img">
+                <img class="avatar"  src="${data.avatar_url
+                }" alt="">
+            </div>
+
+            <div class="user-info">
+                <h2>${data.name}</h2>
+                <p>${data.bio}</p>
+
+                <ul class="info">
+                    <li><Strong>Followers - ${data.followers} </Strong></li>
+                    <li><Strong>Following - ${data.following} </Strong></li>
+                    <li><Strong>Total Repos - ${data.public_repos
+                }</Strong></li>
+
+                </ul>
+
+                <div class="repos">
+                    <a href="#" class="repo" target="_blank">Repo1</a>
+                    <a href="#" class="repo" target="_blank">Repo2</a>
+                    <a href="#" class="repo" target="_blank">Repo3</a>
+
+                </div>
+            </div>
+
+
+        </div>`
+            main.innerHTML = card;
+            getRepos(username)
+        }
+        getUser("Nazim452");
+        const formSubmit = () => {
+            const searchBox = document.querySelector("#input");
+            if (searchBox.value != "") {
+                getUser(searchBox.value);
+                searchBox.value = "";
+
+            }
+            else {
+                alert("PLease enter name")
+            }
+            return false;
+        }
+
+        const getRepos = async (username) => {
+            const repos = document.querySelector(".repos")
+            const res = await fetch(apiurl + username + "/repos");
+            const data = await res.json();
+            console.log(data);
+            // console.log(item);
+            data.forEach((item)=>{
+                console.log(item);
+                const elem = document.createElement('a')
+                elem.classList.add("repo")
+                elem.href =item.html_url;
+                elem.innerText = item.name;
+                elem.target = "_blank";
+                repos.appendChild(elem);
+
+            })
+        }
+        getRepos("Nazim452")
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
